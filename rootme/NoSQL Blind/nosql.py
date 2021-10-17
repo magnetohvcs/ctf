@@ -22,5 +22,3 @@ def findpassword( n : int) -> str:
 n = countchar()
 print('length password ',n)
 print(findpassword(n))
-
-# not equal
