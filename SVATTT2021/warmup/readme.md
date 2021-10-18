@@ -1,0 +1,1 @@
+vòng khởi động
