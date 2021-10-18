@@ -1,2 +1,1 @@
-SVATTT2021 vòng sơ khảo
- 
+SVATTT2021 
