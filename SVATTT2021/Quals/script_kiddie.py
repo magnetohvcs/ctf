@@ -23,8 +23,6 @@ def flag():
 
 
 print("ASCIS{"+flag()+"}")
-##script kiddie
-
 #ssalchtiwesmihcueymorf
 
 
