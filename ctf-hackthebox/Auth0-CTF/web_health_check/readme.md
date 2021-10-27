@@ -1,7 +1,7 @@
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_health_check/src/1.png)
 
 bài này cũng không khó
-ta thấy rằng web này cho ta dùng __curl trong linux__ để crawl đến web khác, `escapeshellcmd($host)`  chặn quoutes.
+ta thấy rằng web này cho ta dùng __curl trong linux__ để crawl đến web khác, `escapeshellcmd($host)`  chặn quoutes , chỉ có thể dùng scheme http .
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_health_check/src/3.png)
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_health_check/src/4.png)
 <br />
