@@ -1,6 +1,6 @@
 ![Alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_purple_expense/3.png)
 bài này khá cơ bản, chủ yếu là ta sẽ đọc code để tìm ra flag. tìm kiếm trong tệp database.js ở dòng thứ 40 có đoạn code này
-### __INSERT INTO user_data (user_uid,type,description,amount) VALUES (73,'Income','🚩 HTB{f4k3_fl4g_f0r_t3st1ng} 🚩',1337);___
+### __INSERT INTO user_data (user_uid,type,description,amount) VALUES (73,'Income','🚩 HTB{f4k3_fl4g_f0r_t3st1ng} 🚩',1337);__
 flag được đặt ở table user_data
 ![Alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_purple_expense/Untitled.png)
 
