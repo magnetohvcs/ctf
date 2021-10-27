@@ -1,7 +1,7 @@
 
 ![Alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_tour_blog/img/Untitled5.png)
 <br />
-ở hàm __getPost__ trong tệp __database.js__ bị lỗi sqli
+ở hàm __getPost__ trong tệp __database.js__ bị  sqli
 <br />
 ![Alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_tour_blog/img/Untitled1.png)
 <br />
