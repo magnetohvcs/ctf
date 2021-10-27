@@ -12,3 +12,4 @@ và sau đó con bot sẽ tiến hành truy cập đến đường dẫn __/tick
 ![](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_blink_host/src/%60.png)
 
 đường __/tickets__ cũng chỉ cho ip localhost mới được truy cập.
+![](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_blink_host/src/2.png)
