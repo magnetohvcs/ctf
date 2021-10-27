@@ -11,7 +11,7 @@ trong tệp __Dockerfile__ ta có thể thấy đường dẫn __/flag__
 <br />
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_health_check/src/Untitled.png)
 
-ta chạy web để bắt file được gửi về
+ta chạy web để bắt file được gửi về, có thể sử dụng đoạn mã python sau
 ```from flask import Flask, request
 
 app = Flask(__name__)
