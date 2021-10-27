@@ -14,3 +14,4 @@ ta viết code để khai khác lấy flag
 ![alt text](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_swift_jobs/Untitled5.png)
 
 [solution.py](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_swift_jobs/solution.py)
+[source code](https://github.com/magnetohvcs/ctf/tree/main/ctf-hackthebox/Auth0-CTF/web_swift_jobs/src)
