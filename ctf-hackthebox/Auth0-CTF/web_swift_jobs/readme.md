@@ -1,2 +1,7 @@
-bài này khá là dễ
-HTB{0rd3r_0f_th3_p34ky_bl1nd3rs}
+![alt text](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_swift_jobs/Untitled4.png)
+
+mã nguồn được cho sẵn, ở hàm getPosts trong tệp database.js bị lỗi sqli
+![alt text](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_swift_jobs/Untitled.png)
+
+trong đường dẫn /api/list có dùng hàm getPosts này
+![alt text](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_swift_jobs/Untitled1.png)
