@@ -10,7 +10,7 @@ def blind(flag):
     return None        
 
 def flag():
-    flag = 'HTB{t0b3_5qL_0r_n05qL_7h4t_is_th3_Q}'
+    flag = 'HTB{'
     while True:
         c = blind(flag)
         if c == '}' or c == None:
