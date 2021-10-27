@@ -4,7 +4,12 @@ bài này khá cơ bản, chủ yếu là ta sẽ đọc code để tìm ra flag
 flag được đặt ở table user_data
 ![Alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_purple_expense/Untitled.png)
 
-sau đó ta đọc tiếp tệp challenge/routes/index.js ta thấy đường dẫn này
+sau đó ta đọc tiếp tệp challenge/routes/index.js ta thấy đường dẫn này __/api/transactions/:user_uid__
+#### return db.getSavedTransactions(req.params.user_uid)
+####    .then(transactions  => {
+####        if (transactions) return res.send({transactions});
+####            res.status(404).send(response('user does not exist'));})
+nó sẽ lấy user_uid làm tham số đưa vào hàm __getSavedTransactions__ 
 ![Alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_purple_expense/2.png)
 
 bây giờ ta chỉ cần tạo tài khoản và đăng nhập sau đó truy cập đường dẫn này
