@@ -7,6 +7,7 @@ flag được đặt ở table user_data
 sau đó ta đọc tiếp tệp challenge/routes/index.js ta thấy đường dẫn này __/api/transactions/:user_uid__ 
 nó sẽ lấy __user_uid__ làm tham số đưa vào hàm __getSavedTransactions__ 
 ![Alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_purple_expense/2.png)
+<br />
 ở hàm này nhận đối số __user_uid__ và thực hiện câu query __SELECT * FROM user_data WHERE user_uid = ?__ 
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_purple_expense/1.png)
 bây giờ ta chỉ cần tạo tài khoản và đăng nhập sau đó truy cập đường dẫn này
