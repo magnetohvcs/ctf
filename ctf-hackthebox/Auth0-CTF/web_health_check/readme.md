@@ -1,7 +1,7 @@
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_health_check/src/1.png)
 
 bài này cũng không khó
-ta thấy rằng web này có chức năng dùng lệnh __curl trong linux__ nhưng ta không thể thực hiện command injection vì hàm __escapeshellcmd($host)__ đã chặn.
+ta thấy rằng web này cho ta dùng __curl trong linux__ để crawl đến web khác,  ta không thể thực hiện command injection vì hàm __escapeshellcmd($host)__ đã chặn.
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_health_check/src/3.png)
 ![alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_health_check/src/4.png)
 <br />
