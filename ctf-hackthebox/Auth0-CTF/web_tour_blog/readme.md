@@ -9,7 +9,7 @@
 <br />
 ![Alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_tour_blog/img/Untitled2.png)
 <br />
-flag được để trong tables __users__ ở dòng password có username là __flagholder__
+flag được để trong tables __users__ ở dòng password có username là __flagbearer__
 <br />
 ![Alt](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_tour_blog/img/Untitled.png)
 <br />
