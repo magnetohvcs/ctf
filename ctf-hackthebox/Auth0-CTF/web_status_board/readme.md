@@ -2,7 +2,7 @@
 ![Tên link với chú thích](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_status_board/Untitled1.png)
 <br />
 
-bài này lỗi mongo sqli blind
+bài này bị mongo sqli blind
 
 ![Tên link với chú thích](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_status_board/Untitled.png)
 
