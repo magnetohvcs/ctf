@@ -6,7 +6,7 @@ tôi rất là vui vì tôi solve lượt 6, đây là lần đầu trong một 
 bài này tác giả có cho `super-secure-translation-implementation.zip` là một file zip chỉ có file __Dockerfile__ giúp xác định được vị trí của flag ở __/flag__
 </br> khi vào web sẽ hiện ra source code python của file __app.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/6.png)
-source code được hiển thị rõ
+đọc kỹ đoạn này ta thấy rằng
 ```@server.route("/")
 @server.route("/<path>")
 def index(path=""):
@@ -22,7 +22,7 @@ def index(path=""):
     with open(path, "r") as f:
         return render_template("index.html", code=f.read())
   ``` 
-  Bằng cách chèn __/path__ giúp ta có thể đọc file trong thư mục __/chal__ vì dấu `..` và `/` đã bị filter nên không thể đọc bên ngoài thư mục __/chall__
+  giúp ta có thể đọc file trong thư mục __/chal__ bằng việc thay đổi path url, vì dấu `..` và `/` đã bị filter nên không thể đọc bên ngoài thư mục __/chal__
   ```
 from check import detect_remove_hacks
 from filters import *
