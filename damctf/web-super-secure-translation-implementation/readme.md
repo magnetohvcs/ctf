@@ -3,8 +3,8 @@
 tôi rất là vui vì tôi solve lượt 6, đây là lần đầu trong một cuộc thi ctf có hơn 500 đội mà tôi solve nhanh vậy
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/5.png)
 
-bài này tác giả có cho `super-secure-translation-implementation.zip` một file zip để tải về nhưng thật ra bên trong chẳng có gì ngoài tệp __Dockerfile__ giúp ta xác định được vị trí của flag
-</br> đây là giao diện của website khi ta vào
+bài này tác giả có cho `super-secure-translation-implementation.zip` là một file zip chỉ có file __Dockerfile__ giúp xác định được vị trí của flag ở __/flag__
+</br> khi vào web sẽ hiện ra source code python của file __app.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/6.png)
 source code được hiển thị rõ
 ```@server.route("/")
