@@ -33,7 +33,7 @@ from filters import *
 và đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/filters.py` để xem nội dung __filters.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/8.png)
 </br>tóm tắt là chỉ cần chèn payload vào __/secure_translate?payload=__ để tấn công ssti nhưng chỉ có một số ký tự được cho phép còn lại đều bị filter
-</br> những ký tự không bị filter
+
 ```  
 allowlist = [
         "c", "{","}","d","6","l","(","b","o","r",")",'"',"1","4","+","h","u","-","*","e","|","'",
@@ -52,7 +52,7 @@ server.jinja_env.filters["order"] = order
 server.jinja_env.filters["ch"] = character
 server.jinja_env.filters["e"] = e
 ```
-tóm tắt là ý nghĩa rằng hàm e là __eval__ và hàm ch là __chr__ được tham chiều từ file check.py, ta sẽ tiếp tục phân ở hàm e xem file filters.py
+tóm tắt là ý nghĩa rằng hàm e là __eval__ và hàm ch là __chr__ được tham chiều từ check.py, ta sẽ tiếp tục phân tích ở hàm e xem file filters.py
 ```
 def e(x):
     # Security analysts reviewed this and said eval is unsafe (haters).
