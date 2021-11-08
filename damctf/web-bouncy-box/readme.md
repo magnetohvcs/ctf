@@ -40,5 +40,6 @@ password = rows('password')
 
 flag = s.post('https://bouncy-box.chals.damctf.xyz/flag',data={'username_input':username,'password_input':password}).text
 print(flag)
+# dam{b0uNCE_B0UNcE_b0uncE_B0uNCY_B0unce_b0Unce_b0Unc3}
 ```
 [source đầy đủ ở đây](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/web1.py)
