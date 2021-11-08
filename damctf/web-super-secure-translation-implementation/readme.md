@@ -1,6 +1,6 @@
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/4.png)
 </br>
-tôi rất là vui vì đội solve bài này lượt thứ 6 là đội của tôi, đây là lần đầu trong một cuộc thi ctf mà tôi solve nhanh như vậy
+tôi rất là vui vì tôi solve lượt 6, đây là lần đầu trong một cuộc thi ctf có hơn 500 đội
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/5.png)
 
 bài này tác giả có cho `super-secure-translation-implementation.zip` một file zip để tải về nhưng thật ra bên trong chẳng có gì ngoài tệp __Dockerfile__ giúp ta xác định được vị trí của flag
