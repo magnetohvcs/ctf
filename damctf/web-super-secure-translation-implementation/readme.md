@@ -32,3 +32,4 @@ from filters import *
 và đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/filters.py` để đọc tệp __filters.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/8.png)
 sau khi đọc qua các tệp thì tóm tắt là tại path __/secure_translate__ với parameter là __?payload={{11*1}}__ ta thấy web bị lỗi ssti
+![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/9.png)
