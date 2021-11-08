@@ -33,9 +33,10 @@ from filters import *
 và đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/filters.py` để đọc tệp __filters.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/8.png)
 </br>tóm tắt là tại path __/secure_translate__ chỉ cần chèn payload vào parameter __?payload=__ thì ta sẽ thấy web bị lỗi ssti, chỉ có một vài  ký tự được cho phép còn lại đều bị chặn
-```  allowlist = [
+```  
+allowlist = [
         "c", "{","}","d","6","l","(","b","o","r",")",'"',"1","4","+","h","u","-","*","e","|","'",
-    ]
+ ]
 ```
 và ở tệp __app.py__ có những dòng lệnh này
 ```
