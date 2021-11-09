@@ -3,10 +3,10 @@
 tôi rất là vui vì tôi solve lượt 6, đây là lần đầu trong một cuộc thi ctf có hơn 500 đội mà tôi solve nhanh vậy
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/5.png)
 
-bài này tác giả có cho `super-secure-translation-implementation.zip` là một file zip chỉ có file __Dockerfile__ giúp xác định được vị trí của flag ở __/flag__
-</br> khi vào web sẽ hiện ra source code python của file __app.py__
+bài này tác giả có cho `super-secure-translation-implementation.zip` bên trong có file __Dockerfile__ xác định được vị trí flag ở __/flag__
+</br> khi vào web sẽ hiện ra nội dung của file __app.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/6.png)
-đọc kỹ đoạn này ta thấy rằng
+với đoạn mã sau
 ```@server.route("/")
 @server.route("/<path>")
 def index(path=""):
@@ -27,12 +27,12 @@ def index(path=""):
 from check import detect_remove_hacks
 from filters import *
 ```
-để ý đoạn này, file app.py có tham chiếu đến 2 file khác là __check.py__ và __filters.py__ vậy ta chỉ cần truy cập đến 
+ở đoạn này, file app.py có tham chiếu đến 2 file khác là __check.py__ và __filters.py__ vậy ta chỉ cần truy cập đến 
 đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/check.py` để xem nội dung file __check.py__ 
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/7.png)
 và đường dẫn `https://super-secure-translation-implementation.chals.damctf.xyz/filters.py` để xem nội dung __filters.py__
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/8.png)
-</br>tóm tắt là chỉ cần chèn payload vào __/secure_translate?payload=__ để tấn công ssti nhưng chỉ có một số ký tự được cho phép còn lại đều bị filter
+</br>tóm tắt là chỉ cần chèn payload vào __/secure_translate?payload=__ để tấn công ssti nhưng đa số đều bị filters chỉ có một số không bị
 
 ```  
 allowlist = [
