@@ -1,6 +1,6 @@
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/4.png)
 </br>
- tôi solve lượt 6
+ tôi solve lượt 6 </br>
 ![img](https://github.com/magnetohvcs/ctf/blob/main/damctf/image/5.png)
 
 bài này tác giả có cho `super-secure-translation-implementation.zip` bên trong có file __Dockerfile__ xác định được vị trí flag ở __/flag__
