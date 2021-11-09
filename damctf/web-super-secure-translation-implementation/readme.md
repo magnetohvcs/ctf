@@ -39,7 +39,7 @@ allowlist = [
         "c", "{","}","d","6","l","(","b","o","r",")",'"',"1","4","+","h","u","-","*","e","|","'",
  ]
 ```
-Phân tích một chút những dòng lệnh này ở file __app.py__
+Ở đoạn này trong file __app.py__
 ```
 server = Flask(__name__)
 
