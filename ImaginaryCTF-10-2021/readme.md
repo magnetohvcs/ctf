@@ -58,7 +58,7 @@ def blind(step):
 
 def FLAG():
 
-    f = ''  # ictf{I_really_hope_that_this_doesnt_k1ll_my_server}
+    f = ''  # ictf{I_really_hope_that_this_doesn't_k1ll_my_server}
     step = 0
     while 1:
         char = blind(step)
