@@ -1,1 +1,1 @@
-# Hello world!
+# NoSQL Blind
